@@ -3,44 +3,44 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>https://bdcaf.github.io/r-hugo-papercss-template/</loc>
     <lastmod>2019-04-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/post/</loc>
+    <loc>https://bdcaf.github.io/r-hugo-papercss-template/post/</loc>
     <lastmod>2019-04-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
-    <lastmod>2019-04-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.org/tags/minimal/</loc>
+    <loc>https://bdcaf.github.io/r-hugo-papercss-template/tags/</loc>
     <lastmod>2019-04-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/minimal/</loc>
+    <loc>https://bdcaf.github.io/r-hugo-papercss-template/tags/minimal/</loc>
+    <lastmod>2019-04-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bdcaf.github.io/r-hugo-papercss-template/minimal/</loc>
     <lastmod>2019-04-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/slides/</loc>
+    <loc>https://bdcaf.github.io/r-hugo-papercss-template/slides/</loc>
     <lastmod>2019-04-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/text/</loc>
+    <loc>https://bdcaf.github.io/r-hugo-papercss-template/text/</loc>
     <lastmod>2019-04-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/about/</loc>
+    <loc>https://bdcaf.github.io/r-hugo-papercss-template/about/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
   </url>
   
