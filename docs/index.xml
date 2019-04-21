@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on R Hugo Papercss site template</title>
+    <link>http://example.org/</link>
+    <description>Recent content in Blog on R Hugo Papercss site template</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>minimal R Markdown example</title>
+      <link>http://example.org/minimal/</link>
+      <pubDate>Sun, 21 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/minimal/</guid>
+      <description>This is a render from knitr examples.
+A minimal R Markdown example A quote:
+ Markdown is not LaTeX.
+ To compile me, run this in R:
+library(knitr) knit(&#39;001-minimal.Rmd&#39;)  See output here.
+code chunks A paragraph here. A code chunk below (remember the three backticks):
+1+1  ## [1] 2  .4-.7+.3 # what? it is not zero!  ## [1] 5.551115e-17  graphics It is easy.
+plot(1:10)    plot of chunk unnamed-chunk-2</description>
+    </item>
+    
+    <item>
+      <title>slides</title>
+      <link>http://example.org/slides/</link>
+      <pubDate>Sun, 21 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/slides/</guid>
+      <description>This is render from 009-slides
+% Writing beautiful and reproducible slides quickly % Yihui Xie % 2012/04/30
+Why  after you finished typing \documentclass{beamer} and \title{}, I have finished my first slide with markdown far fewer commands to remember, e.g. to write bullet points, just begin with a dash &amp;ldquo;-&amp;rdquo; instead of \begin{itemize} and \item; how things can be simpler? I know you want math to show you are a statistician, e.</description>
+    </item>
+    
+    <item>
+      <title>text output</title>
+      <link>http://example.org/text/</link>
+      <pubDate>Sun, 21 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/text/</guid>
+      <description>This is render from 007-text-output.Rmd
+Testing text output See if chunk options like tidy, prompt and echo, etc work as expected.
+A normal chunk 1+1  ## [1] 2  for (i in 1:10) { # nothing before 10 if(i&amp;gt;=10)print(i) }  ## [1] 10  # two blank lines below dnorm(0)  ## [1] 0.3989423  Do not evaluate 1+1 for (i in 1:10) { # nothing before 10 if(i&amp;gt;=10)print(i) } # two blank lines below dnorm(0)  Add prompts &amp;gt; 1+1  ## [1] 2  &amp;gt; for (i in 1:10) { + # nothing before 10 + if(i&amp;gt;=10)print(i) + }  ## [1] 10  &amp;gt; # two blank lines below &amp;gt; &amp;gt; &amp;gt; dnorm(0)  ## [1] 0.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://example.org/about/</link>
+      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/about/</guid>
+      <description>Hugo is the world’s fastest framework for building websites. It is written in Go.
+It makes use of a variety of open source projects including:
+ https://github.com/russross/blackfriday https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  Learn more and contribute on GitHub.</description>
+    </item>
+    
+  </channel>
+</rss>

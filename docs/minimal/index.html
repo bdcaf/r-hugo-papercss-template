@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.55.2" />
+  <link rel="canonical" href="http://example.org/minimal/">
+
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="http://example.org/css/paper.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="http://example.org/css/custom.css">
+
+  
+  
+  <title>minimal R Markdown example | R Hugo Papercss site template</title>
+</head>
+  <body>
+    <div class="container paper">
+      <nav class="border split-nav">
+  <div class="nav-brand">
+    <h3><a href="/">R Hugo Papercss site template</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+    <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+      
+        <li><a href="/">Blog</a></li>
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+        <li><a href="/about/">About</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+      <main>
+        
+
+<h1 class="post-title">minimal R Markdown example</h1>
+
+
+<strong>Publish date: </strong>Apr 21, 2019
+<br>
+
+  <strong>Tags: </strong>
+  
+    <a href="http://example.org/tags/minimal">minimal</a>
+  
+
+
+
+  
+
+<div class="child-borders">
+  <div class="toc border" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#code-chunks">
+            code chunks
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#graphics">
+            graphics
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#inline-code">
+            inline code
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#math">
+            math
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#nested-code-chunks">
+            nested code chunks
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#conclusion">
+            conclusion
+          </a>
+        </li>
+      
+    </ol>
+  </div>
+</div>
+
+
+
+
+
+<p>This is a render from <a href="https://github.com/yihui/knitr-examples">knitr examples</a>.</p>
+
+<h1 id="a-minimal-r-markdown-example">A minimal R Markdown example</h1>
+
+<p>A quote:</p>
+
+<blockquote>
+<p>Markdown is not LaTeX.</p>
+</blockquote>
+
+<p>To compile me, run this in R:</p>
+
+<pre><code>library(knitr)
+knit('001-minimal.Rmd')
+</code></pre>
+
+<p>See <a href="https://github.com/yihui/knitr-examples/blob/master/001-minimal.md">output here</a>.</p>
+
+<h2 id="code-chunks">code chunks</h2>
+
+<p>A <em>paragraph</em> here. A code chunk below (remember the three backticks):</p>
+
+<pre><code class="language-r">1+1
+</code></pre>
+
+<pre><code>## [1] 2
+</code></pre>
+
+<pre><code class="language-r">.4-.7+.3 # what? it is not zero!
+</code></pre>
+
+<pre><code>## [1] 5.551115e-17
+</code></pre>
+
+<h2 id="graphics">graphics</h2>
+
+<p>It is easy.</p>
+
+<pre><code class="language-r">plot(1:10)
+</code></pre>
+
+<figure>
+  <a href="/minimal/unnamed-chunk-2-1.png">
+    <img
+      srcset="/minimal/unnamed-chunk-2-1_hua3f78ea6896c67525037e79de48e7fa2_13613_320x0_resize_box_2.png 320w,/minimal/unnamed-chunk-2-1_hua3f78ea6896c67525037e79de48e7fa2_13613_600x0_resize_box_2.png 600w,/minimal/unnamed-chunk-2-1_hua3f78ea6896c67525037e79de48e7fa2_13613_1200x0_resize_box_2.png 2x"
+      src="/minimal/unnamed-chunk-2-1_hua3f78ea6896c67525037e79de48e7fa2_13613_600x0_resize_box_2.png" alt=""/>
+  </a>
+  <figcaption><p>plot of chunk unnamed-chunk-2</p></figcaption>
+</figure>
+
+<pre><code class="language-r">hist(rnorm(1000))
+</code></pre>
+
+<figure>
+  <a href="/minimal/unnamed-chunk-2-2.png">
+    <img
+      srcset="/minimal/unnamed-chunk-2-2_hu1c667afbe9315a47892439af3ed01770_17715_320x0_resize_box_2.png 320w,/minimal/unnamed-chunk-2-2_hu1c667afbe9315a47892439af3ed01770_17715_600x0_resize_box_2.png 600w,/minimal/unnamed-chunk-2-2_hu1c667afbe9315a47892439af3ed01770_17715_1200x0_resize_box_2.png 2x"
+      src="/minimal/unnamed-chunk-2-2_hu1c667afbe9315a47892439af3ed01770_17715_600x0_resize_box_2.png" alt=""/>
+  </a>
+  <figcaption><p>plot of chunk unnamed-chunk-2</p></figcaption>
+</figure>
+
+<h2 id="inline-code">inline code</h2>
+
+<p>Yes I know the value of pi is 3.1415927, and 2 times pi is 6.2831853.</p>
+
+<h2 id="math">math</h2>
+
+<p>Sigh. You cannot live without math equations. OK, here we go: $\alpha+\beta=\gamma$. Note this is not supported by native markdown. You probably want to try RStudio, or at least the R package <strong>markdown</strong>, or the function <code>knitr::knit2html()</code>.</p>
+
+<h2 id="nested-code-chunks">nested code chunks</h2>
+
+<p>You can write code within other elements, e.g. a list</p>
+
+<ol>
+<li><p>foo is good</p>
+
+<pre><code class="language-r">strsplit('hello indented world', ' ')[[1]]
+</code></pre>
+
+<pre><code>## [1] &quot;hello&quot;    &quot;indented&quot; &quot;world&quot;
+</code></pre></li>
+
+<li><p>bar is better</p></li>
+</ol>
+
+<p>Or inside blockquotes:</p>
+
+<blockquote>
+<p>Here is a quote, followed by a code chunk:</p>
+
+<pre><code class="language-r">x = 1:10
+rev(x^2)
+</code></pre>
+
+<pre><code>##  [1] 100  81  64  49  36  25  16   9   4   1
+</code></pre>
+</blockquote>
+
+<h2 id="conclusion">conclusion</h2>
+
+<p>Nothing fancy. You are ready to go. When you become picky, go to the <a href="http://yihui.name/knitr/">knitr website</a>.</p>
+
+<p><img src="http://yihui.name/knitr/images/knit-logo.png" alt="knitr logo" /></p>
+
+  
+
+      </main>
+      
+  
+
+  </div>
+  </body>
+</html>
