@@ -3,7 +3,7 @@ languageCode: en-us
 defaultContentLanguage: en
 title: PaperCSS
 theme: papercss-hugo-theme
-title: My R Hugo Paper site
+title: R Hugo Papercss site template
 
 taxonomies:
   tag: tags
