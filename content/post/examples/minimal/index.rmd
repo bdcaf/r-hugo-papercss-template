@@ -1,11 +1,15 @@
 ---
 title: "minimal R Markdown example"
 subtitle: "001-minimal"
-author: "yihui"
+author: "Clemens Ager"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 link-citations: yes
+tags: 
+  - minimal
 ---
+
+This is a render from [knitr examples](https://github.com/yihui/knitr-examples).
 
 # A minimal R Markdown example
 

@@ -1,0 +1,21 @@
+baseURL: http://example.org/
+languageCode: en-us
+defaultContentLanguage: en
+title: PaperCSS
+theme: papercss-hugo-theme
+title: My R Hugo Paper site
+
+taxonomies:
+  tag: tags
+
+permalinks:
+  post: /:filename/
+
+imaging:
+  quality: 99
+
+
+params:
+  homeMetaContent: A Hugo theme made with PaperCSS, the less formal CSS framework.
+  # For more date formats see https://gohugo.io/functions/format/
+  dateFormat: Jan 2, 2006
