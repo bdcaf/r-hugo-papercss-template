@@ -1,3 +1,11 @@
 content/post/**/index.md
 content/post/**/*.png
 resources/_gen/
+public/
+__packages
+session-info_*.rdb
+session-info_*.rdx
+session-info_*.Rdata
+graphics_*.rdb
+graphics_*.rdx
+graphics_*.Rdata

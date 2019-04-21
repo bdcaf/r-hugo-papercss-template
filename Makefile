@@ -2,7 +2,11 @@ R := Rscript
 RNW_SOURCES := $(shell find content -iname "index.rmd")
 RNW_TARGET := $(patsubst %.rmd,%.md,$(RNW_SOURCES))
 
-all: all_rnw
+all: 
+
+page: all_rnw
+	hugo
+
 all_rnw: $(RNW_TARGET)
 test:
 	echo $(RNW_TARGET)
