@@ -1,3 +1,5 @@
+newContentEditor: nvim
+
 baseURL: https://bdcaf.github.io/r-hugo-papercss-template/
 languageCode: en-us
 defaultContentLanguage: en
