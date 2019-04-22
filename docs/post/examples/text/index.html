@@ -1,0 +1,203 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=generator content="Hugo 0.55.2"><link rel=canonical href=https://bdcaf.github.io/r-hugo-papercss-template/post/examples/text/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#000000><meta name=msapplication-TileColor content=#ffffff><meta name=theme-color content=#ffffff><link rel=stylesheet type=text/css href=https://bdcaf.github.io/r-hugo-papercss-template/css/paper.css><link rel=stylesheet type=text/css href=https://bdcaf.github.io/r-hugo-papercss-template/css/custom.css><title>text output | R Hugo Papercss site template</title></head><body><div class="container paper"><nav class="border split-nav"><div class=nav-brand><h3><a href=https://bdcaf.github.io/r-hugo-papercss-template//>R Hugo Papercss site template</a></h3></div><div class=collapsible><input id=collapsible1 type=checkbox name=collapsible1>
+<button>
+<label for=collapsible1><div class=bar1></div><div class=bar2></div><div class=bar3></div></label></button><div class=collapsible-body><ul class=inline><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/guide/>Guides</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/post/>Blog</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/tags/>Tags</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/about/>About</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/index.xml>RSS</a></li></ul></div></div></nav><main><h1 class=post-title>text output</h1><strong>Publish date: </strong>Apr 22, 2019<br><strong>Tags:</strong>
+<a href=https://bdcaf.github.io/r-hugo-papercss-template/tags/minimal>minimal</a><div class=child-borders><div class="toc border" aria-labelledby=toc-heading><h2 id=toc-heading>Table of contents</h2><ol><li><a href=#a-normal-chunk>A normal chunk</a></li><li><a href=#do-not-evaluate>Do not evaluate</a></li><li><a href=#add-prompts>Add prompts</a></li><li><a href=#no-evaluate-or-tidy>No evaluate or tidy</a></li><li><a href=#do-not-tidy>Do not tidy</a></li><li><a href=#do-not-echo>Do not echo</a></li><li><a href=#do-not-comment-out-results>Do not comment out results</a></li><li><a href=#do-not-echo-the-2nd-expression>Do not echo the 2nd expression</a></li><li><a href=#do-not-evaluate-echo-the-2nd-expression>Do not evaluate, echo the 2nd expression</a></li><li><a href=#only-evaluate-the-first-two-expressions>Only evaluate the first two expressions</a></li><li><a href=#add-prompts-but-no-tidy>Add prompts but no tidy</a></li><li><a href=#prompts-no-evaluate-or-tidy>Prompts, no evaluate or tidy</a></li><li><a href=#change-prompts>Change prompts</a></li><li><a href=#backslashes>Backslashes</a></li><li><a href=#other-formatr-options>Other formatR options</a></li><li><a href=#empty-chunks>Empty chunks</a></li><li><a href=#messages>Messages</a></li><li><a href=#the-results-option>The results option</a></li></ol></div></div><p>This is render from <a href=https://github.com/yihui/knitr-examples/blob/master/007-text-output.Rmd>007-text-output.Rmd</a></p><h1 id=testing-text-output>Testing text output</h1><p>See if chunk options like <code>tidy</code>, <code>prompt</code> and <code>echo</code>, etc work as expected.</p><h2 id=a-normal-chunk>A normal chunk</h2><pre><code class=language-r>1+1
+</code></pre><pre><code>## [1] 2
+</code></pre><pre><code class=language-r>for (i in 1:10) {
+# nothing before 10
+if(i&gt;=10)print(i)
+}
+</code></pre><pre><code>## [1] 10
+</code></pre><pre><code class=language-r># two blank lines below
+
+
+dnorm(0)
+</code></pre><pre><code>## [1] 0.3989423
+</code></pre><h2 id=do-not-evaluate>Do not evaluate</h2><pre><code class=language-r>1+1
+for (i in 1:10) {
+# nothing before 10
+if(i&gt;=10)print(i)
+}
+# two blank lines below
+
+
+dnorm(0)
+</code></pre><h2 id=add-prompts>Add prompts</h2><pre><code class=language-r>&gt; 1+1
+</code></pre><pre><code>## [1] 2
+</code></pre><pre><code class=language-r>&gt; for (i in 1:10) {
++ # nothing before 10
++ if(i&gt;=10)print(i)
++ }
+</code></pre><pre><code>## [1] 10
+</code></pre><pre><code class=language-r>&gt; # two blank lines below
+&gt; 
+&gt; 
+&gt; dnorm(0)
+</code></pre><pre><code>## [1] 0.3989423
+</code></pre><h2 id=no-evaluate-or-tidy>No evaluate or tidy</h2><pre><code class=language-r>1+1
+for (i in 1:10) {
+# nothing before 10
+if(i&gt;=10)print(i)
+}
+# two blank lines below
+
+
+dnorm(0)
+</code></pre><h2 id=do-not-tidy>Do not tidy</h2><pre><code class=language-r>1+1
+</code></pre><pre><code>## [1] 2
+</code></pre><pre><code class=language-r>for (i in 1:10) {
+# nothing before 10
+if(i&gt;=10)print(i)
+}
+</code></pre><pre><code>## [1] 10
+</code></pre><pre><code class=language-r># two blank lines below
+
+
+dnorm(0)
+</code></pre><pre><code>## [1] 0.3989423
+</code></pre><h2 id=do-not-echo>Do not echo</h2><pre><code>## [1] 2
+</code></pre><pre><code>## [1] 10
+</code></pre><pre><code>## [1] 0.3989423
+</code></pre><h2 id=do-not-comment-out-results>Do not comment out results</h2><pre><code class=language-r>1+1
+</code></pre><pre><code>[1] 2
+</code></pre><pre><code class=language-r>for (i in 1:10) {
+# nothing before 10
+if(i&gt;=10)print(i)
+}
+</code></pre><pre><code>[1] 10
+</code></pre><pre><code class=language-r># two blank lines below
+
+
+dnorm(0)
+</code></pre><pre><code>[1] 0.3989423
+</code></pre><h2 id=do-not-echo-the-2nd-expression>Do not echo the 2nd expression</h2><pre><code class=language-r>1+1
+</code></pre><pre><code>## [1] 2
+</code></pre><pre><code>## [1] 10
+</code></pre><pre><code class=language-r># two blank lines below
+
+
+dnorm(0)
+</code></pre><pre><code>## [1] 0.3989423
+</code></pre><h2 id=do-not-evaluate-echo-the-2nd-expression>Do not evaluate, echo the 2nd expression</h2><pre><code class=language-r>for (i in 1:10) {
+</code></pre><h2 id=only-evaluate-the-first-two-expressions>Only evaluate the first two expressions</h2><pre><code class=language-r>1+1
+</code></pre><pre><code>## [1] 2
+</code></pre><pre><code class=language-r>for (i in 1:10) {
+# nothing before 10
+if(i&gt;=10)print(i)
+}
+</code></pre><pre><code>## [1] 10
+</code></pre><pre><code class=language-r>## # two blank lines below
+## 
+## 
+## dnorm(0)
+</code></pre><h2 id=add-prompts-but-no-tidy>Add prompts but no tidy</h2><pre><code class=language-r>&gt; 1+1
+</code></pre><pre><code>## [1] 2
+</code></pre><pre><code class=language-r>&gt; for (i in 1:10) {
++ # nothing before 10
++ if(i&gt;=10)print(i)
++ }
+</code></pre><pre><code>## [1] 10
+</code></pre><pre><code class=language-r>&gt; # two blank lines below
+&gt; 
+&gt; 
+&gt; dnorm(0)
+</code></pre><pre><code>## [1] 0.3989423
+</code></pre><h2 id=prompts-no-evaluate-or-tidy>Prompts, no evaluate or tidy</h2><pre><code class=language-r>&gt; 1+1
+&gt; for (i in 1:10) {
++ # nothing before 10
++ if(i&gt;=10)print(i)
++ }
+&gt; # two blank lines below
+&gt; 
+&gt; 
+&gt; dnorm(0)
+</code></pre><h2 id=change-prompts>Change prompts</h2><pre><code class=language-r>options(prompt='R&gt; ', continue='+  ')
+</code></pre><pre><code class=language-r>R&gt; 1+1
+</code></pre><pre><code>## [1] 2
+</code></pre><pre><code class=language-r>R&gt; for (i in 1:10) {
++  # nothing before 10
++  if(i&gt;=10)print(i)
++  }
+</code></pre><pre><code>## [1] 10
+</code></pre><pre><code class=language-r>R&gt; # two blank lines below
+R&gt; 
+R&gt; 
+R&gt; dnorm(0)
+</code></pre><pre><code>## [1] 0.3989423
+</code></pre><h2 id=backslashes>Backslashes</h2><pre><code class=language-r>{
+# can you deal with \code{foo} or \n, \a?
+gsub('\\.', '\\\\', 'a.b.c') # \link{bar}
+}
+</code></pre><pre><code>## [1] &quot;a\\b\\c&quot;
+</code></pre><pre><code class=language-r>cat('a\tb\nc')
+</code></pre><pre><code>## a	b
+## c
+</code></pre><h2 id=other-formatr-options>Other formatR options</h2><p>We can set <strong>formatR</strong> options globally:</p><pre><code class=language-r>options(formatR.blank = FALSE)
+</code></pre><pre><code class=language-r>1+1
+for (i in 1:10) {
+# nothing before 10
+if(i&gt;=10)print(i)
+}
+# two blank lines below
+
+
+dnorm(0)
+</code></pre><p>Or locally in one chunk via <code>tidy.opts</code>. Do not keep comments:</p><pre><code class=language-r>1+1
+for (i in 1:10) {
+# nothing before 10
+if(i&gt;=10)print(i)
+}
+# two blank lines below
+
+
+dnorm(0)
+</code></pre><p>Move left braces to the next line:</p><pre><code class=language-r>for (i in 1:10) {
+# nothing before 10
+if(i&gt;=10)print(i)
+}
+</code></pre><pre><code>## [1] 10
+</code></pre><p>Indent by 2 spaces:</p><pre><code class=language-r>1+1
+for (i in 1:10) {
+# nothing before 10
+if(i&gt;=10)print(i)
+}
+# two blank lines below
+
+
+dnorm(0)
+</code></pre><p>See <a href=http://yihui.name/formatR>http://yihui.name/formatR</a> for details.</p><h2 id=empty-chunks>Empty chunks</h2><h2 id=messages>Messages</h2><p>Do not include messages:</p><pre><code class=language-r>1+1
+</code></pre><pre><code>## [1] 2
+</code></pre><pre><code class=language-r>message('helloooo!')
+</code></pre><p>No warnings:</p><pre><code class=language-r>1:2+1:3
+</code></pre><pre><code>## [1] 2 4 4
+</code></pre><pre><code class=language-r>warning('no no no')
+</code></pre><p>Select warnings using numeric indices:</p><pre><code class=language-r>1:2+1:3
+</code></pre><pre><code>## [1] 2 4 4
+</code></pre><pre><code class=language-r>warning('no no no')
+</code></pre><pre><code>## Warning: no no no
+</code></pre><p>Invalid indices will select nothing:</p><pre><code class=language-r>1:2+1:3
+</code></pre><pre><code>## [1] 2 4 4
+</code></pre><pre><code class=language-r>warning('no no no')
+</code></pre><h2 id=the-results-option>The results option</h2><p>Do not show text results:</p><pre><code class=language-r>1+1
+for (i in 1:10) {
+# nothing before 10
+if(i&gt;=10)print(i)
+}
+# two blank lines below
+
+
+dnorm(0)
+</code></pre><p>Flush all results to the end of a chunk:</p><pre><code class=language-r>1+1
+for (i in 1:10) {
+# nothing before 10
+if(i&gt;=10)print(i)
+}
+# two blank lines below
+
+
+dnorm(0)
+</code></pre><pre><code>## [1] 2
+## [1] 10
+## [1] 0.3989423
+</code></pre><p>Output as is:</p><pre><code class=language-r>cat('_Markdown_,', 'oh yeah, **Markdown**')
+</code></pre><p><em>Markdown</em>, oh yeah, <strong>Markdown</strong></p></main></div></body></html>

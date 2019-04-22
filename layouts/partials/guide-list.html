@@ -5,7 +5,14 @@
       {{ .Title }}
     </a>
   </h2>
+  {{- if .Truncated -}}
+  {{- printf "%s" .Summary | markdownify -}}
+  <p class="read-more">
+    <a href="{{- .Permalink -}}" class="continue">read more..</a>
+  </p>
+  {{- else -}}
   {{ if ne .Params.summary false }}
     {{ .Summary }}
   {{ end }}
+  {{- end -}}
 {{ end }}
