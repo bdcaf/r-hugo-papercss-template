@@ -6,17 +6,24 @@
 
 {{- with .Content -}}
 <div class="section-head" >{{- . -}}</div>
+<hr/>
 {{- end -}}
 
 {{ range .Pages }}
-  <h2 class="post-list {{ if ne .Params.summary false }}summary{{ end }}">
-    <a href="{{ .Permalink }}">
-      {{ .Title }}
-    </a>
-  </h2>
-  {{ if ne .Params.summary false }}
-    {{ .Summary }}
-  {{ end }}
+<h2 class="post-list {{ if ne .Params.summary false }}summary{{ end }}">
+  <a href="{{ .Permalink }}">
+    {{ .Title }}
+  </a>
+</h2>
+{{- if .Truncated -}}
+{{- printf "%s" .Summary | markdownify -}}
+<p class="read-more">
+  <a href="{{- .Permalink -}}" class="continue">read more..</a>
+</p>
+{{- else -}}
+{{- .Content -}}
+{{- end -}}
+<hr/>
 {{ end }}
 
 {{- end }}

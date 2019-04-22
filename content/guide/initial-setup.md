@@ -23,6 +23,7 @@ You can do to all actions doing
 make setup
 ```
 
+<!--more-->
 ### alternative
 #### paper css
 You will also need to initialise the [hugo-papercss theme](https://papercss-hugo-theme.netlify.com).
@@ -45,3 +46,4 @@ make pages
 
 If all worked out without error you can then run `hugo server`
 and go to the printed location in your browser to see your site in action.
+
