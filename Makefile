@@ -5,7 +5,8 @@ RNW_TARGET := $(patsubst %.rmd,%.md,$(RNW_SOURCES))
 all: 
 
 page: all_rnw
-	hugo
+	rm -rf docs/*
+	hugo --minify
 
 all_rnw: $(RNW_TARGET)
 test:
@@ -20,6 +21,11 @@ content/%/index.pre.md: content/%/index.rmd
 		-e "knitr::opts_chunk[['set']](cache.path='$(@D)/')" \
 		-e "knitr::opts_chunk[['set']](fig.path='$(@D)/')" \
 		-e "knitr::knit('$<', output='$@')"
+
+publish: page
+	git add docs/
+	git commit -am "published"
+	git push
 
 
 
