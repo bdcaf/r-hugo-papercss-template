@@ -27,7 +27,9 @@ publish: page
 	git commit -am "published"
 	git push
 
-
-
 clean_index:
 	rm $(RNW_TARGET)
+
+setup: setup_papercss
+setup_papercss:
+	git submodule update --init --remote
