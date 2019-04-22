@@ -31,3 +31,9 @@ publish: page
 
 clean_index:
 	rm $(RNW_TARGET)
+
+server: 
+	hugo server
+setup: setup_papercss
+setup_papercss:
+	git submodule update --init --remote
