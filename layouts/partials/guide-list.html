@@ -1,14 +1,5 @@
-{{ define "main" -}}
-
-<h1>
-{{- .Title -}}
-</h1>
-
-{{- with .Content -}}
-<div class="section-head" >{{- . -}}</div>
-{{- end -}}
-
-{{ range .Pages }}
+<h1>Guides</h1>
+{{ range where .Pages.ByWeight "Section" "guide" }}
   <h2 class="post-list {{ if ne .Params.summary false }}summary{{ end }}">
     <a href="{{ .Permalink }}">
       {{ .Title }}
@@ -18,5 +9,3 @@
     {{ .Summary }}
   {{ end }}
 {{ end }}
-
-{{- end }}

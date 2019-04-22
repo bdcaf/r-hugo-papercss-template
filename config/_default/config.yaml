@@ -7,13 +7,10 @@ title: PaperCSS
 theme: papercss-hugo-theme
 title: R Hugo Papercss site template
 
-publishDir: ../docs
+publishDir: docs
 
 taxonomies:
   tag: tags
-
-permalinks:
-  post: /:filename/
 
 imaging:
   quality: 99

@@ -1,13 +1,16 @@
 nav:
-  - name: Blog
-    url: /
+  - name: Guides
+    url: /guide/
     weight: 1
+  - name: Blog
+    url: /post/
+    weight: 2
   - name: Tags
     url: /tags/
-    weight: 2
+    weight: 3
   - name: About
     url: /about/
-    weight: 3
+    weight: 4
   - name: RSS
     url: /index.xml
-    weight: 4
+    weight: 5
