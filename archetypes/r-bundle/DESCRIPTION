@@ -1,0 +1,9 @@
+Package: {{ replace .Name "-" "_" | lower }}_post
+Title: Post for "{{ replace .Name "-" " " | title }}"
+Version: 0.0.0.9000
+Description: What the package does (one paragraph).
+Depends: R (>= 3.5.3)
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports: 
