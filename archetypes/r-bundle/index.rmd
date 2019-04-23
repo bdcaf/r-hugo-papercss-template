@@ -13,3 +13,7 @@ Example post
 devtools::load_all()
 ```
 
+<!--more-->
+
+The source for this page is at
+{{< bundle-file name="index.rmd" caption="index.rmd" >}}.
