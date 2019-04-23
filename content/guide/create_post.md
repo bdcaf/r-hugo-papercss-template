@@ -12,27 +12,34 @@ Create a post using
 hugo new --kind r-bundle post/mytitle
 ```
 
-For now this will create a skeleton post under `content/post/mytitle/index.md`.
+For now this will create a skeleton directoru under `content/post/mytitle/`.
+This content will contain a file `index.md` which will be overwritten.
+The interesting file is `source.md` - it will get special treatment as it is ignored in the settings. 
+Without this ignoring it would show up twice.
 
-For now hugo will not render `.rmd` files.
+It is a hugo specific that it will only fill out templates with extension `.md`.
+I put in a modeline for vim to set the filetype to `rnoweb`.
 
-**If you want the code to be run you need to adjust the extension to .rmd**
-Of course you can create your own `index.rmd` from scratch as well.
 
 <!--more-->
 
-### Rendering
+### Writing
+
+Write your post by modifying the new `source.md`.
+
+If your editor creates the page for you remove all generated html before publishing.
 
 Once the code is ready input
 ``` 
 make all_rnw
 ```
-in the root directory of the blog
-to render all `index.rmd` under posts.
+in the root directory of the blog.
+This not only renders all unrendered r-bundles under posts, but also rewrites the local links to shortcodes so hugo correctly links them.
 
-Alternatively you can 
+
+If you just want to render an individual post you can alternatively type:
 ```
-Rscript -e "knitr::knit('$(index.rmd)', output='$(index.md)')"
+make content/post/mytitle/index.md
 ```
 
 Should `hugo server` be running this is the moment the preview will update.
@@ -45,5 +52,6 @@ The command
 ```
 make page
 ```
-assures all rmds have been rendered and then runs hugo.
+assures all `source.md` have been rendered and then runs hugo.
+
 
