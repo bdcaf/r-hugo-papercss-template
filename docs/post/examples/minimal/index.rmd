@@ -7,6 +7,7 @@ output: rmarkdown::html_vignette
 link-citations: yes
 tags: 
   - minimal
+  - example
 ---
 
 This is a render from [knitr examples](https://github.com/yihui/knitr-examples).

@@ -1,7 +1,8 @@
 ---
 title: "use devtools"
+subtitle: "helpful functions"
 author: "Clemens Ager"
-date: 2019-04-23T10:34:13+02:00
+date: 2019-04-22T10:34:13+02:00
 link-citations: yes
 tags: 
   - tips
@@ -18,8 +19,6 @@ I like to use `devtools::load_all()` to load up all R functions from the R subdi
 
 I placed a simple function under 
 {{< bundle-file name="R/hello_world.R" caption="R/hello_world.R" >}}
-
-<!--more-->
 
 ```{r}
 devtools::load_all()
