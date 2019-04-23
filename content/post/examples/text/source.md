@@ -15,6 +15,8 @@ This is render from [007-text-output.Rmd](https://github.com/yihui/knitr-example
 
 See if chunk options like `tidy`, `prompt` and `echo`, etc work as expected.
 
+<!--more-->
+
 ## A normal chunk
 
 ```{r demo}
