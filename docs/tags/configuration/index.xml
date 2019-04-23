@@ -12,7 +12,10 @@ You can make an empty start by cloning the &lt;code&gt;plain branch&lt;/code&gt;
 &lt;li&gt;on the settings page scroll down to the github pages section&lt;/li&gt;
 &lt;li&gt;under source select &amp;ldquo;master branch/docs folder&amp;rdquo;&lt;/li&gt;
 &lt;li&gt;no need to select a theme or a custom theme&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Tips</title><link>https://bdcaf.github.io/r-hugo-papercss-template/guide/tips/</link><pubDate>Tue, 23 Apr 2019 10:38:34 +0200</pubDate><guid>https://bdcaf.github.io/r-hugo-papercss-template/guide/tips/</guid><description>&lt;ol&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once everything is setup the page can be published
+doing &lt;code&gt;make publish&lt;/code&gt;.
+This will commit everything in the docs folder with the message published.&lt;/p&gt;</description></item><item><title>Tips</title><link>https://bdcaf.github.io/r-hugo-papercss-template/guide/tips/</link><pubDate>Tue, 23 Apr 2019 10:38:34 +0200</pubDate><guid>https://bdcaf.github.io/r-hugo-papercss-template/guide/tips/</guid><description>&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;I dislike the way hugo truncates posts automatically for summary.&lt;br /&gt;
 Manually truncating by placing &amp;lt;!&amp;ndash;more&amp;ndash;&amp;gt; assures the head is rendered nicely. For short posts one can just put it at the and assure they are rendered fully.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;The makefile create a minified version of the rendered site.&lt;br /&gt;

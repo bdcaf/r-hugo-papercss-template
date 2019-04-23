@@ -3,4 +3,7 @@
 &lt;li&gt;on the settings page scroll down to the github pages section&lt;/li&gt;
 &lt;li&gt;under source select &amp;ldquo;master branch/docs folder&amp;rdquo;&lt;/li&gt;
 &lt;li&gt;no need to select a theme or a custom theme&lt;/li&gt;
-&lt;/ul&gt;</description></item></channel></rss>
+&lt;/ul&gt;
+&lt;p&gt;Once everything is setup the page can be published
+doing &lt;code&gt;make publish&lt;/code&gt;.
+This will commit everything in the docs folder with the message published.&lt;/p&gt;</description></item></channel></rss>
