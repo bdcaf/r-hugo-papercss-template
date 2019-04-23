@@ -6,6 +6,7 @@ weight: 1
 tags:
   - r
 link-citations: yes
+draft: true
 ---
 
 Example post
@@ -16,5 +17,3 @@ devtools::load_all()
 
 <!--more-->
 
-The source for this page is at
-{{< bundle-file name="index.rmd" caption="index.rmd" >}}.
