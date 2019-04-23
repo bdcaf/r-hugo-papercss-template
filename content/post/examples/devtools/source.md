@@ -80,10 +80,4 @@ kable(dt)
 ```
 
 
-The source for this page is 
-{{< bundle-file name="index.rmd" caption="index.rmd" >}}
-
-
-
-
 

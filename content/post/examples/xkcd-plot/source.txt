@@ -11,8 +11,13 @@ draft: true
 
 Example post
 
-```{r}
+
+```r
 devtools::load_all()
+```
+
+```
+## Loading aPost
 ```
 
 <!--more-->
