@@ -1,6 +1,9 @@
 R := Rscript
+
 RNW_SOURCES := $(shell find content -iname "index.rmd")
 RNW_TARGET := $(patsubst %.rmd,%.md,$(RNW_SOURCES))
+
+RBUNDLE_DIR := content/post
 
 all: 
 
@@ -12,24 +15,22 @@ all_rnw: $(RNW_TARGET)
 test:
 	echo $(RNW_TARGET)
 
-content/%/index.md: content/%/index.pre.md
+$(RBUNDLE_DIR)/%/index.md: $(RBUNDLE_DIR)/%/index.pre.md
 	sed 's|^!\[\(.*\)\](content/.*/\([^/]*\))$$|\{\{< bundle-image name="\2" caption="\1" >\}\}|g' $< > $@
 	#cp $< $@
 
-content/%/index.pre.md: content/%/index.rmd
-	 $R  -e "knitr::opts_knit[['set']](root.dir = normalizePath('$(@D)'))" \
-		-e "knitr::opts_chunk[['set']](cache.path='$(@D)/')" \
-		-e "knitr::opts_chunk[['set']](fig.path='$(@D)/')" \
-		-e "knitr::knit('$<', output='$@')"
+$(RBUNDLE_DIR)/%/index.pre.md: $(RBUNDLE_DIR)/%/index.rmd
+	 cd $(@D); \
+	 $R  -e "knitr::knit('$(<F)', output='$(@F)')"
 
 publish: page
 	git add docs/
 	git commit -am "published"
 	git push
 
-
-
-clean_index:
+clean: clean_posts
+clean_posts:
+	find $(RBUNDLE_DIR) -type d -name "figure"
 	rm $(RNW_TARGET)
 
 server: 
