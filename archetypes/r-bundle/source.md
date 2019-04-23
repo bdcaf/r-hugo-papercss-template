@@ -1,7 +1,7 @@
 ---
 # vim: set ft=rnoweb : 
-title: "Xkcd Plot"
-date: 2019-04-23T17:35:34+02:00
+title: "{{ humanize .Name  | title }}"
+date: {{ .Date }}
 weight: 1
 tags:
   - r

@@ -25,3 +25,6 @@ mediaTypes:
   text/plain:
     suffixes:
       -rmd
+
+ignoreFiles:
+  - "source.md$"
