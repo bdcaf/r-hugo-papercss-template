@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>post on R Hugo Papercss site template</title><link>https://bdcaf.github.io/r-hugo-papercss-template/tags/post/</link><description>Recent content in post on R Hugo Papercss site template</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 23 Apr 2019 12:25:32 +0200</lastBuildDate><atom:link href="https://bdcaf.github.io/r-hugo-papercss-template/tags/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Create Post</title><link>https://bdcaf.github.io/r-hugo-papercss-template/guide/create_post/</link><pubDate>Tue, 23 Apr 2019 12:25:32 +0200</pubDate><guid>https://bdcaf.github.io/r-hugo-papercss-template/guide/create_post/</guid><description>&lt;p&gt;Create a post using&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;hugo new --kind r-bundle post/mytitle
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;For now this will create a skeleton post under &lt;code&gt;content/post/mytitle/index.md&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;For now hugo will not render &lt;code&gt;.rmd&lt;/code&gt; files.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;If you want the code to be run you need to adjust the extension to .rmd&lt;/strong&gt;
-Of course you can create your own &lt;code&gt;index.rmd&lt;/code&gt; from scratch as well.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;For now this will create a skeleton directoru under &lt;code&gt;content/post/mytitle/&lt;/code&gt;.
+This content will contain a file &lt;code&gt;index.md&lt;/code&gt; which will be overwritten.
+The interesting file is &lt;code&gt;source.md&lt;/code&gt; - it will get special treatment as it is ignored in the settings.
+Without this ignoring it would show up twice.&lt;/p&gt;
+&lt;p&gt;It is a hugo specific that it will only fill out templates with extension &lt;code&gt;.md&lt;/code&gt;.
+I put in a modeline for vim to set the filetype to &lt;code&gt;rnoweb&lt;/code&gt;.&lt;/p&gt;</description></item></channel></rss>

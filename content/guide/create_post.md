@@ -26,6 +26,7 @@ I put in a modeline for vim to set the filetype to `rnoweb`.
 ### Writing
 
 Write your post by modifying the new `source.md`.
+In the metadata there is draft set to true - delete or set it to false to have the post also in the output.
 
 If your editor creates the page for you remove all generated html before publishing.
 
@@ -33,6 +34,7 @@ Once the code is ready input
 ``` 
 make all_rnw
 ```
+
 in the root directory of the blog.
 This not only renders all unrendered r-bundles under posts, but also rewrites the local links to shortcodes so hugo correctly links them.
 

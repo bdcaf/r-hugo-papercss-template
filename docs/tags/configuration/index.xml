@@ -16,18 +16,9 @@ You can make an empty start by cloning the &lt;code&gt;plain branch&lt;/code&gt;
 &lt;p&gt;Once everything is setup the page can be published
 doing &lt;code&gt;make publish&lt;/code&gt;.
 This will commit everything in the docs folder with the message published.&lt;/p&gt;</description></item><item><title>Tips</title><link>https://bdcaf.github.io/r-hugo-papercss-template/guide/tips/</link><pubDate>Tue, 23 Apr 2019 10:38:34 +0200</pubDate><guid>https://bdcaf.github.io/r-hugo-papercss-template/guide/tips/</guid><description>&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;I delete the contents of &lt;code&gt;docs/&lt;/code&gt; before building the site.
+&lt;li&gt;&lt;p&gt;the contents of &lt;code&gt;docs/&lt;/code&gt; is deleted before building the site.
 If this is not done no longer used files will build up in there.
 Should you need to keep files put them in the &lt;code&gt;static&lt;/code&gt; directory.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;I dislike the way hugo truncates posts automatically for summary.&lt;br /&gt;
 Manually truncating by placing &amp;lt;!&amp;ndash;more&amp;ndash;&amp;gt; assures the head is rendered nicely. For short posts one can just put it at the and assure they are rendered fully.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The makefile create a minified version of the rendered site.&lt;br /&gt;
-I like this as the plain hugo rendered pages contain lots of extra spacing.&lt;br /&gt;
-Having comments and other unused code removed is also nice.
-This apparently can break some hugo functions.
-So if you find it causes trouble find following section in the Makefile and remove the &lt;code&gt;--minify&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;page: all_rnw
-rm -rf docs/*
-hugo --minify
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item></channel></rss>
