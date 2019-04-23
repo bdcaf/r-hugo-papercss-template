@@ -1,6 +1,9 @@
-This is a template to create xkcd like blog where posts are created with knitr.
+This is a template to create xkcd like blog. 
+I aim for using R with knitr to create post-bundles.
 
 An example is hosted at: [r-hugo-papercss-template/](https://bdcaf.github.io/r-hugo-papercss-template/)
+
+This uses a [fork](https://github.com/bdcaf/papercss-hugo-theme) of the [papercss-hugo-theme](https://github.com/zwbetz-gh/papercss-hugo-theme).
 
 **Note** the master branch contains also the changes for the github page as well as archetypes for the guides.
 For a clean start you might use the `plain` branch.
