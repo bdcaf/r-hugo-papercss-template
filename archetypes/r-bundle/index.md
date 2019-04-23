@@ -10,4 +10,4 @@ draft: true
 ---
 
 This is an empty post. 
-It will be replaced by the output of
+It will be replaced by the output of `source.md`
