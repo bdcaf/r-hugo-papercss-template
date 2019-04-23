@@ -5,9 +5,11 @@ You can make an empty start by cloning the <code>plain branch</code>:</p><pre><c
 </code></pre><h2 id=local-setup>local setup</h2><p>Many actions are run as <a href=https://www.gnu.org/software/make/>make</a> actions.</p><p>You can do to all actions doing</p><pre><code>make setup
 </code></pre><p class=read-more><a href=https://bdcaf.github.io/r-hugo-papercss-template/guide/initial-setup/ class=continue>read more..</a></p><hr><h2 class="post-list summary"><a href=https://bdcaf.github.io/r-hugo-papercss-template/guide/configure_github_pages/>Configure Github Pages</a></h2><p>To setup <a href=https://pages.github.com>github-pages</a> do the following:</p><ul><li>on the settings page scroll down to the github pages section</li><li>under source select &ldquo;master branch/docs folder&rdquo;</li><li>no need to select a theme or a custom theme</li></ul><p>Once everything is setup the page can be published
 doing <code>make publish</code>.
-This will commit everything in the docs folder with the message published.</p><p class=read-more><a href=https://bdcaf.github.io/r-hugo-papercss-template/guide/configure_github_pages/ class=continue>read more..</a></p><hr><h2 class="post-list summary"><a href=https://bdcaf.github.io/r-hugo-papercss-template/guide/tips/>Tips</a></h2><ol><li><p>I dislike the way hugo truncates posts automatically for summary.<br>Manually truncating by placing &lt;!&ndash;more&ndash;&gt; assures the head is rendered nicely. For short posts one can just put it at the and assure they are rendered fully.</p></li><li><p>The makefile create a minified version of the rendered site.<br>I like this as the plain hugo rendered pages contain lots of extra spacing.<br>Having comments and other unused code removed is also nice.
+This will commit everything in the docs folder with the message published.</p><p class=read-more><a href=https://bdcaf.github.io/r-hugo-papercss-template/guide/configure_github_pages/ class=continue>read more..</a></p><hr><h2 class="post-list summary"><a href=https://bdcaf.github.io/r-hugo-papercss-template/guide/tips/>Tips</a></h2><ul><li><p>I delete the contents of <code>docs/</code> before building the site.
+If this is not done no longer used files will build up in there.
+Should you need to keep files put them in the <code>static</code> directory.</p></li><li><p>I dislike the way hugo truncates posts automatically for summary.<br>Manually truncating by placing &lt;!&ndash;more&ndash;&gt; assures the head is rendered nicely. For short posts one can just put it at the and assure they are rendered fully.</p></li><li><p>The makefile create a minified version of the rendered site.<br>I like this as the plain hugo rendered pages contain lots of extra spacing.<br>Having comments and other unused code removed is also nice.
 This apparently can break some hugo functions.
 So if you find it causes trouble find following section in the Makefile and remove the <code>--minify</code></p><pre><code>page: all_rnw
-  rm -rf docs/*
-  hugo --minify
-</code></pre></li></ol><hr></main></div></body></html>
+   rm -rf docs/*
+   hugo --minify
+</code></pre></li></ul><hr></main></div></body></html>

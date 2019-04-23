@@ -21,7 +21,10 @@ Of course you can create your own &lt;code&gt;index.rmd&lt;/code&gt; from scratc
 &lt;/ul&gt;
 &lt;p&gt;Once everything is setup the page can be published
 doing &lt;code&gt;make publish&lt;/code&gt;.
-This will commit everything in the docs folder with the message published.&lt;/p&gt;</description></item><item><title>Tips</title><link>https://bdcaf.github.io/r-hugo-papercss-template/guide/tips/</link><pubDate>Tue, 23 Apr 2019 10:38:34 +0200</pubDate><guid>https://bdcaf.github.io/r-hugo-papercss-template/guide/tips/</guid><description>&lt;ol&gt;
+This will commit everything in the docs folder with the message published.&lt;/p&gt;</description></item><item><title>Tips</title><link>https://bdcaf.github.io/r-hugo-papercss-template/guide/tips/</link><pubDate>Tue, 23 Apr 2019 10:38:34 +0200</pubDate><guid>https://bdcaf.github.io/r-hugo-papercss-template/guide/tips/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;I delete the contents of &lt;code&gt;docs/&lt;/code&gt; before building the site.
+If this is not done no longer used files will build up in there.
+Should you need to keep files put them in the &lt;code&gt;static&lt;/code&gt; directory.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;I dislike the way hugo truncates posts automatically for summary.&lt;br /&gt;
 Manually truncating by placing &amp;lt;!&amp;ndash;more&amp;ndash;&amp;gt; assures the head is rendered nicely. For short posts one can just put it at the and assure they are rendered fully.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;The makefile create a minified version of the rendered site.&lt;br /&gt;
@@ -33,7 +36,7 @@ So if you find it causes trouble find following section in the Makefile and remo
 rm -rf docs/*
 hugo --minify
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;</description></item><item><title>use devtools</title><link>https://bdcaf.github.io/r-hugo-papercss-template/post/examples/devtools/</link><pubDate>Tue, 23 Apr 2019 10:34:13 +0200</pubDate><guid>https://bdcaf.github.io/r-hugo-papercss-template/post/examples/devtools/</guid><description>&lt;p&gt;Although a blog post is not a R package the &lt;a href=&#34;https://cran.r-project.org/web/packages/devtools/index.html&#34;&gt;devtools&lt;/a&gt; package provides some useful tools.
+&lt;/ul&gt;</description></item><item><title>use devtools</title><link>https://bdcaf.github.io/r-hugo-papercss-template/post/examples/devtools/</link><pubDate>Tue, 23 Apr 2019 10:34:13 +0200</pubDate><guid>https://bdcaf.github.io/r-hugo-papercss-template/post/examples/devtools/</guid><description>&lt;p&gt;Although a blog post is not a R package the &lt;a href=&#34;https://cran.r-project.org/web/packages/devtools/index.html&#34;&gt;devtools&lt;/a&gt; package provides some useful tools.
 But who knows maybe a package will sprout from a post.&lt;/p&gt;
 &lt;h3 id=&#34;plain-devtools&#34;&gt;plain devtools&lt;/h3&gt;
 &lt;p&gt;Provides some functions to create bundled data.&lt;br /&gt;
