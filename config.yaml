@@ -3,7 +3,6 @@ newContentEditor: nvim
 baseURL: https://bdcaf.github.io/r-hugo-papercss-template/
 languageCode: en-us
 defaultContentLanguage: en
-title: PaperCSS
 theme: papercss-hugo-theme
 title: R Hugo Papercss site template
 
@@ -20,3 +19,8 @@ params:
   homeMetaContent: A template site for using hugo with papercss theme and knitr r for enjoyable stat blogging.
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat: Jan 2, 2006
+
+mediaTypes:
+  text/plain:
+    suffixes:
+      -rmd
