@@ -1,7 +1,7 @@
 ---
 title: "Initial Setup"
 date: 2019-04-22T11:22:16+02:00
-weight: 100
+weight: 1
 tags:
   - configuration
 ---
