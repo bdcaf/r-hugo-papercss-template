@@ -1,9 +1,5 @@
 !tags
-content/post/**/index.md
-content/post/**/*.png
-resources/_gen/
-public/
-__packages
+!**/*.png
 session-info_*.rdb
 session-info_*.rdx
 session-info_*.Rdata
@@ -13,5 +9,3 @@ computing_*.Rdata
 graphics_*.rdb
 graphics_*.rdx
 graphics_*.Rdata
-gh-pages/
-plain/

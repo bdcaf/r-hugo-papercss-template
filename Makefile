@@ -4,11 +4,12 @@ RNW_SOURCES := $(shell find content/post -iname "source.md")
 RNW_TARGET := $(patsubst %/source.md,%/index.md,$(RNW_SOURCES))
 
 RBUNDLE_DIR := content/post
+PAGE_DIR := gh-pages
 
 all: 
 
 page: all_rnw
-	rm -rf docs/*
+	rm -rf $(PAGE_DIR)/*
 	hugo --minify
 
 all_rnw: $(RNW_TARGET)
