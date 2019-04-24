@@ -6,7 +6,7 @@ defaultContentLanguage: en
 theme: papercss-hugo-theme
 title: R Hugo Papercss site template
 
-publishDir: docs
+publishDir: gh-pages
 
 taxonomies:
   tag: tags
