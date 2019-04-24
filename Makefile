@@ -25,8 +25,9 @@ $(RBUNDLE_DIR)/%/intermediate.wip: $(RBUNDLE_DIR)/%/source.md
 	 $R  -e "knitr::knit('$(<F)', output='$(@F)')"
 
 publish: page
-	git add docs/
-	git commit -am "published"
+	cd $(PAGE_DIR) ;\
+	git add . ;\
+	git commit -am "published" ;\
 	git push
 
 clean: clean_posts
