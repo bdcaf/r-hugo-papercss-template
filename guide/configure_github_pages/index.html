@@ -2,7 +2,18 @@
 <button>
 <label for=collapsible1><div class=bar1></div><div class=bar2></div><div class=bar3></div></label></button><div class=collapsible-body><ul class=inline><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/guide/>Guides</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/post/>Blog</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/tags/>Tags</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/about/>About</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/index.xml>RSS</a></li></ul></div></div></nav><main><h1 class=post-title>Configure Github Pages</h1><strong>Publish date: </strong>Apr 22, 2019<br><strong>Tags:</strong>
 <a href=https://bdcaf.github.io/r-hugo-papercss-template/tags/github-pages>github pages</a>
-<a href=https://bdcaf.github.io/r-hugo-papercss-template/tags/configuration>configuration</a><p>To setup <a href=https://pages.github.com>github-pages</a> do the following:</p><ul><li>on the settings page scroll down to the github pages section</li><li>under source select &ldquo;master branch/docs folder&rdquo;</li><li>no need to select a theme or a custom theme</li></ul><p>Once everything is setup the page can be published
-doing <code>make publish</code>.
-This will commit everything in the docs folder with the message published.</p><h4 id=notes>Notes:</h4><ul><li><p>currently github pages does not support publishing git lfs files.<br>The simplest workaround is to not use git lfs for referenced files.
+<a href=https://bdcaf.github.io/r-hugo-papercss-template/tags/configuration>configuration</a><p>To setup <a href=https://pages.github.com>github-pages</a> do one of the following:</p><h4 id=publish-from-gh-pages-branch>publish from gh-pages branch</h4><p>This is my preferred variant as it keeps the master branch clean.</p><h5 id=setup-branch>setup branch</h5><p>First step is to create an empty branch <code>gh-repo</code>. This is best done immediatly when creating the repo.
+This involves some modifying in the directory so have all important files from there somewhere backed up.</p><pre><code>git checkout --orphan gh-pages
+</code></pre><p>I had to do manual cleaning.</p><pre><code>git rm -rf .
+git add .
+git commit -am &quot;empty&quot;
+</code></pre><p>and publish to github:</p><pre><code>git push --set-upstream origin gh-pages
+</code></pre><p>Either way then you can switch back to <code>master</code>.</p><pre><code>git checkout master
+</code></pre><p>and add a worktree tracking <code>gh-pages</code>.</p><pre><code>git worktree gh-pages
+</code></pre><p>If the stars stand in your favour <code>make page</code> will write the files into the <code>gh-pages</code> subdirectory.</p><p>Then <code>make publish</code> will push the changes.</p><p>Github configuration is back here as the option to use gh-pages is only available <em>after</em> the branch has been created.</p><ul><li>on the settings page scroll down to the github pages section</li><li>under source select &ldquo;master branch/docs folder&rdquo;</li><li>no need to select a theme or a custom theme</li></ul><h4 id=publish-from-docs-folder>publish from docs folder</h4><p>github configuration:</p><ul><li>on the settings page scroll down to the github pages section</li><li>under source select &ldquo;master branch/docs folder&rdquo;</li><li>no need to select a theme or a custom theme</li></ul><p>for building into docs you need to configure <code>config.yaml</code> to contain:</p><pre><code>publishDir: gh-pages
+</code></pre><p>The publish command is currently removed. In the <code>Makefile</code> you need to adjust the <code>publish</code> section to look like this:</p><pre><code>publish: page
+	git add docs/
+	git commit -am &quot;published&quot;
+	git push
+</code></pre><p>This will commit everything in the docs folder with the message published.</p><h4 id=notes>Notes:</h4><ul><li><p>currently github pages does not support publishing git lfs files.<br>The simplest workaround is to not use git lfs for referenced files.
 Should you accidentally have it turned on you can remove the files, use <code>git lfs untrack ~bad files~</code> and readd them.</p></li><li><p>I chose a single message for publish so it would be easy to filter out.</p></li></ul></main></div></body></html>
