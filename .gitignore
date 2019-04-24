@@ -1,0 +1,11 @@
+!tags
+!**/*.png
+session-info_*.rdb
+session-info_*.rdx
+session-info_*.Rdata
+computing_*.rdb
+computing_*.rdx
+computing_*.Rdata
+graphics_*.rdb
+graphics_*.rdx
+graphics_*.Rdata
