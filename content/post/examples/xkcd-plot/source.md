@@ -24,7 +24,7 @@ In particular I follow the [xkcd-intro](https://cran.r-project.org/web/packages/
 
 Let's first run the test as in the vignette:
 
-```{r, fig.cap="test output", fig.width=1.2, fig.height=1}
+```{r, fig.cap="test output #float-right", fig.width=1.2, fig.height=1}
 library(extrafont)
 library(ggplot2)
 
@@ -49,7 +49,7 @@ library(xkcd)
 ## Axis, Stick Figures and Facets
 
 Now the famous cars plot.
-```{r, fig.cap="Figure: cars plot"}
+```{r, fig.cap="Figure: cars plot #float-left"}
 xrange <- range(mtcars$mpg)
 yrange <- range(mtcars$wt)
 set.seed(123) # for reproducibility
@@ -138,7 +138,7 @@ p
 
 ### bar plot
 
-```{r, fig.cap = "bar plot"}
+```{r, fig.cap = "bar plot#float-right"}
 data <- volunteers
 data$xmin <- data$year - 0.1
 data$xmax <- data$year + 0.1
