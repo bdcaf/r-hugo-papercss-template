@@ -17,7 +17,7 @@ test:
 	echo $(RMD_TARGET)
 
 $(RBUNDLE_DIR)/%/index.md: $(RBUNDLE_DIR)/%/intermediate.wip
-	sed 's|^!\[\(.*\)\](content/.*/\([^/]*\))$$|\{\{< bundle-image name="\2" caption="\1" >\}\}|g' $< > $@
+	sed 's|^!\[\(.*\)\](\(.*\))$$|\{\{< bundle-figure name="\2" caption="\1" >\}\}|g' $< > $@
 	#cp $< $@
 
 $(RBUNDLE_DIR)/%/intermediate.wip: $(RBUNDLE_DIR)/%/source.md
