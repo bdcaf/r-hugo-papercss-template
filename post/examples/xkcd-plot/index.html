@@ -1,0 +1,134 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=generator content="Hugo 0.55.3"><link rel=canonical href=https://bdcaf.github.io/r-hugo-papercss-template/post/examples/xkcd-plot/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#000000><meta name=msapplication-TileColor content=#ffffff><meta name=theme-color content=#ffffff><link rel=stylesheet href=https://bdcaf.github.io/r-hugo-papercss-template/style.min.724f294bb6601de4d0187d96d3355b6ad0040ee1619b31bddf3e526de6295d56d8a575778ecf5f52df67568092d9d62653798ada8ea49a6131f658be85bffee4.css integrity="sha512-ck8pS7ZgHeTQGH2W0zVbatAEDuFhmzG93z5SbeYpXVbYpXV3js9fUt9nVoCS2dYmU3mK2o6kmmEx9li&#43;hb/&#43;5A=="><link rel=stylesheet type=text/css href=https://bdcaf.github.io/r-hugo-papercss-template/css/custom.css><title>Xkcd Plot | R Hugo Papercss site template</title></head><body><div class="container paper"><nav class="border split-nav"><div class=nav-brand><h3><a href=https://bdcaf.github.io/r-hugo-papercss-template//>R Hugo Papercss site template</a></h3></div><div class=collapsible><input id=collapsible1 type=checkbox name=collapsible1>
+<button>
+<label for=collapsible1><div class=bar1></div><div class=bar2></div><div class=bar3></div></label></button><div class=collapsible-body><ul class=inline><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/guide/>Guides</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/post/>Blog</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/tags/>Tags</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/about/>About</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/index.xml>RSS</a></li></ul></div></div></nav><main><h1 class=post-title>Xkcd Plot</h1><strong>Publish date: </strong>Apr 23, 2019<br><strong>Tags:</strong>
+<a href=https://bdcaf.github.io/r-hugo-papercss-template/tags/r>r</a>
+<a href=https://bdcaf.github.io/r-hugo-papercss-template/tags/xkcd>xkcd</a><div class=child-borders><div class="toc border" aria-labelledby=toc-heading><h2 id=toc-heading>Table of contents</h2><ol><li><a href=#test-fonts>test fonts</a></li><li><a href=#axis-stick-figures-and-facets>Axis, Stick Figures and Facets</a></li><li><a href=#xkcdman>xkcdman</a></li><li><a href=#some-basic-examples>Some Basic Examples</a></li></ol></div></div><p>Now let&rsquo;s include the <a href=http://xkcd.r-forge.r-project.org>xkcd package</a>.
+In particular I follow the <a href=https://cran.r-project.org/web/packages/xkcd/vignettes/xkcd-intro.pdf>xkcd-intro</a>.</p><h2 id=test-fonts>test fonts</h2><p>Let&rsquo;s first run the test as in the vignette:</p><pre><code class=language-r>library(extrafont)
+</code></pre><pre><code>## Registering fonts with R
+</code></pre><pre><code class=language-r>library(ggplot2)
+
+if ( &quot;xkcd&quot; %in% fonts()) {
+ p &lt;- ggplot() + geom_point(aes(x=mpg, y=wt), data=mtcars) +
+   theme(text = element_text(size = 16, family = &quot;xkcd&quot;))
+} else {
+  warning(&quot;No xkcd fonts installed!&quot;)
+  p &lt;- ggplot() + geom_point(aes(x=mpg, y=wt), data=mtcars) 
+}
+p
+</code></pre><figure><a href=/r-hugo-papercss-template/post/examples/xkcd-plot/figure/unnamed-chunk-1-1.png><img src=/r-hugo-papercss-template/post/examples/xkcd-plot/figure/unnamed-chunk-1-1.png alt></a><figcaption><p>test output</p></figcaption></figure><p>The suggested way to install the xkcd fond did not work for me.
+Eventually I just downloaded the <a href=http://simonsoftware.se/other/xkcd.ttf>ttf file</a> and used the system font manager to install it.</p><p>Load the library</p><pre><code class=language-r>library(xkcd)
+</code></pre><h2 id=axis-stick-figures-and-facets>Axis, Stick Figures and Facets</h2><p>Now the famous cars plot.</p><pre><code class=language-r>xrange &lt;- range(mtcars$mpg)
+yrange &lt;- range(mtcars$wt)
+set.seed(123) # for reproducibility
+p &lt;- ggplot() + geom_point(aes(mpg, wt), data=mtcars) +  xkcdaxis(xrange,yrange)
+p
+</code></pre><figure><a href=/r-hugo-papercss-template/post/examples/xkcd-plot/figure/unnamed-chunk-3-1.png><img src=/r-hugo-papercss-template/post/examples/xkcd-plot/figure/unnamed-chunk-3-1.png alt></a><figcaption><p>Figure: cars plot</p></figcaption></figure><h2 id=xkcdman>xkcdman</h2><pre><code class=language-r>ratioxy &lt;- diff(xrange)/diff(yrange)
+mapping &lt;- aes(x, y, scale, ratioxy, angleofspine,
+               anglerighthumerus, anglelefthumerus,
+               anglerightradius, angleleftradius,
+               anglerightleg, angleleftleg, angleofneck,
+               linetype=city)
+</code></pre><pre><code>## Warning: Duplicated aesthetics after name standardisation:
+</code></pre><pre><code class=language-r>dataman &lt;- data.frame(x= c(15,30), y=c(3, 4),
+                      scale = c(0.3,0.51) ,
+                      ratioxy = ratioxy,
+                      angleofspine =  -pi/2  ,
+                      anglerighthumerus = c(pi/4, -pi/6),
+                      anglelefthumerus = c(pi/2 + pi/4, pi + pi/6),
+                      anglerightradius = c(pi/3, -pi/3),
+                      angleleftradius = c(pi/3, -pi/3),
+		      anglerightleg = 3*pi/2 -pi/12,
+		      angleleftleg = 3*pi/2 + pi/12,
+		      angleofneck = runif(1, 3*pi/2-pi/10, 3*pi/2+pi/10),
+		      city = c(&quot;Liliput&quot;, &quot;Brobdingnag&quot;)
+)
+
+p &lt;- ggplot() + geom_point(aes(mpg, wt, colour=as.character(vs)), data=mtcars) +
+  xkcdaxis(xrange,yrange) +
+xkcdman(mapping, dataman) 
+  p
+</code></pre><figure><a href=/r-hugo-papercss-template/post/examples/xkcd-plot/figure/unnamed-chunk-4-1.png><img src=/r-hugo-papercss-template/post/examples/xkcd-plot/figure/unnamed-chunk-4-1.png alt></a><figcaption><p>plot with xkcd man</p></figcaption></figure><h2 id=some-basic-examples>Some Basic Examples</h2><h3 id=with-text>with text</h3><pre><code class=language-r>volunteers &lt;- data.frame(year=c(2007:2011),
+                         number=c(56470, 56998, 59686, 61783, 64251))
+xrange &lt;- range(volunteers$year)
+yrange &lt;- range(volunteers$number)
+ratioxy &lt;-  diff(xrange) / diff(yrange)
+datalines &lt;- data.frame(xbegin=c(2008.3,2010.5),ybegin=c(63000,59600),
+			xend=c(2008.5,2010.3), yend=c(63400,59000))
+mapping &lt;- aes(x, y, scale, ratioxy, angleofspine,
+	       anglerighthumerus, anglelefthumerus,
+	       anglerightradius, angleleftradius,
+	       anglerightleg, angleleftleg, angleofneck)
+</code></pre><pre><code>## Warning: Duplicated aesthetics after name standardisation:
+</code></pre><pre><code class=language-r>dataman &lt;- data.frame( x= c(2008,2010), y=c(63000, 58850),
+		      scale = 1000 ,
+		      ratioxy = ratioxy,
+		      angleofspine =  -pi/2  ,
+		      anglerighthumerus = c(-pi/6, -pi/6),
+		      anglelefthumerus = c(-pi/2 - pi/6, -pi/2 - pi/6),
+		      anglerightradius = c(pi/5, -pi/5),
+		      angleleftradius = c(pi/5, -pi/5),
+		      angleleftleg = 3*pi/2  + pi / 12 ,
+		      anglerightleg = 3*pi/2  - pi / 12,
+		      angleofneck = runif(1, 3*pi/2-pi/10, 3*pi/2+pi/10))
+
+p &lt;- 
+  ggplot() + 
+  geom_smooth(mapping=aes(x=year, y =number),
+	      data = volunteers, 
+	      method = &quot;loess&quot;) +
+    xkcdaxis(xrange, yrange) +
+    ylab(&quot;Volunteers at Caritas Spain&quot;) +
+    xkcdman(mapping, dataman) +
+    annotate(&quot;text&quot;, x=2008.7, y=63700,
+	     label = &quot;We Need\nVolunteers!&quot;, family=&quot;xkcd&quot;) +
+    annotate(&quot;text&quot;, x=2010.6, y=60000,
+	     label = &quot;Sure\nI can!&quot;, family=&quot;xkcd&quot;) +
+    xkcdline(aes(x=xbegin,
+		 y=ybegin,
+		 xend=xend, yend=yend), 
+	     datalines, xjitteramount = 0.12)
+
+p 
+</code></pre><pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : span too small. fewer data values than degrees of freedom.
+</code></pre><pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : pseudoinverse used at 2007
+</code></pre><pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : neighborhood radius 2.02
+</code></pre><pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : reciprocal condition number 0
+</code></pre><pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : There are other near singularities as well. 4.0804
+</code></pre><pre><code>## Warning in predLoess(object$y, object$x, newx = if
+## (is.null(newdata)) object$x else if (is.data.frame(newdata))
+## as.matrix(model.frame(delete.response(terms(object)), : span too small.
+## fewer data values than degrees of freedom.
+</code></pre><pre><code>## Warning in predLoess(object$y, object$x, newx = if
+## (is.null(newdata)) object$x else if (is.data.frame(newdata))
+## as.matrix(model.frame(delete.response(terms(object)), : pseudoinverse used
+## at 2007
+</code></pre><pre><code>## Warning in predLoess(object$y, object$x, newx = if
+## (is.null(newdata)) object$x else if (is.data.frame(newdata))
+## as.matrix(model.frame(delete.response(terms(object)), : neighborhood radius
+## 2.02
+</code></pre><pre><code>## Warning in predLoess(object$y, object$x, newx = if
+## (is.null(newdata)) object$x else if (is.data.frame(newdata))
+## as.matrix(model.frame(delete.response(terms(object)), : reciprocal
+## condition number 0
+</code></pre><pre><code>## Warning in predLoess(object$y, object$x, newx = if
+## (is.null(newdata)) object$x else if (is.data.frame(newdata))
+## as.matrix(model.frame(delete.response(terms(object)), : There are other
+## near singularities as well. 4.0804
+</code></pre><figure><a href=/r-hugo-papercss-template/post/examples/xkcd-plot/figure/unnamed-chunk-5-1.png><img src=/r-hugo-papercss-template/post/examples/xkcd-plot/figure/unnamed-chunk-5-1.png alt></a><figcaption><p>plot with men and text</p></figcaption></figure><h3 id=bar-plot>bar plot</h3><pre><code class=language-r>data &lt;- volunteers
+data$xmin &lt;- data$year - 0.1
+data$xmax &lt;- data$year + 0.1
+data$ymin &lt;- 50000
+data$ymax &lt;- data$number
+xrange &lt;- range(min(data$xmin)-0.1, max(data$xmax) + 0.1)
+yrange &lt;- range(min(data$ymin)+500, max(data$ymax) + 1000)
+mapping &lt;- aes(xmin=xmin,ymin=ymin,xmax=xmax,ymax=ymax)
+p &lt;- ggplot() + xkcdrect(mapping,data) +
+  xkcdaxis(xrange,yrange) +
+  xlab(&quot;Year&quot;) + ylab(&quot;Volunteers at Caritas Spain&quot;)
+p # Figure 5.b
+</code></pre><figure><a href=/r-hugo-papercss-template/post/examples/xkcd-plot/figure/unnamed-chunk-6-1.png><img src=/r-hugo-papercss-template/post/examples/xkcd-plot/figure/unnamed-chunk-6-1.png alt></a><figcaption><p>bar plot</p></figcaption></figure></main></div></body></html>
