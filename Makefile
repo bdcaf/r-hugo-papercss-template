@@ -1,20 +1,20 @@
 R := Rscript
 
-RNW_SOURCES := $(shell find content/post -iname "source.md")
-RNW_TARGET := $(patsubst %/source.md,%/index.md,$(RNW_SOURCES))
+RMD_SOURCES := $(shell find content/post -iname "source.md")
+RMD_TARGET := $(patsubst %/source.md,%/index.md,$(RMD_SOURCES))
 
 RBUNDLE_DIR := content/post
 PAGE_DIR := gh-pages
 
 all: 
 
-page: all_rnw
+page: all_rmd
 	rm -rf $(PAGE_DIR)/*
 	hugo --minify
 
-all_rnw: $(RNW_TARGET)
+all_rmd: $(RMD_TARGET)
 test:
-	echo $(RNW_TARGET)
+	echo $(RMD_TARGET)
 
 $(RBUNDLE_DIR)/%/index.md: $(RBUNDLE_DIR)/%/intermediate.wip
 	sed 's|^!\[\(.*\)\](content/.*/\([^/]*\))$$|\{\{< bundle-image name="\2" caption="\1" >\}\}|g' $< > $@
@@ -33,7 +33,7 @@ publish: page
 clean: clean_posts
 clean_posts:
 	find $(RBUNDLE_DIR) -type d -name "figure"
-	rm $(RNW_TARGET)
+	rm $(RMD_TARGET)
 
 server: 
 	hugo server

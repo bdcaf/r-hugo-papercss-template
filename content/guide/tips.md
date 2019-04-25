@@ -21,7 +21,7 @@ tags:
    This apparently can break some hugo functions. 
    So if you find it causes trouble find following section in the Makefile and remove the `--minify`
    ```
-   page: all_rnw
+   page: all_rmd
        rm -rf docs/*
        hugo --minify
    ```

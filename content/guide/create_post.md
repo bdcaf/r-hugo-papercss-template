@@ -32,7 +32,7 @@ If your editor creates the page for you remove all generated html before publish
 
 Once the code is ready input
 ``` 
-make all_rnw
+make all_rmd
 ```
 
 in the root directory of the blog.
