@@ -153,3 +153,5 @@ p <- ggplot() + xkcdrect(mapping,data) +
 p # Figure 5.b
 ```
 
+I also play around with float.   One can also put css classes in the `fig.cap` string.  
+Currently the string is split at a `#` sign.  The text after the sign is put as css class for the figure.
