@@ -2,7 +2,7 @@
 title: "minimal R Markdown example"
 subtitle: "001-minimal"
 author: "Clemens Ager"
-date: "`r Sys.Date()`"
+date: "2019-04-20"
 output: rmarkdown::html_vignette
 link-citations: yes
 tags: 
