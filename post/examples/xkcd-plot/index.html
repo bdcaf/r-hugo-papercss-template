@@ -58,8 +58,7 @@ mapping &lt;- aes(x, y, scale, ratioxy, angleofspine,
 	       anglerighthumerus, anglelefthumerus,
 	       anglerightradius, angleleftradius,
 	       anglerightleg, angleleftleg, angleofneck)
-</code></pre><pre><code>## Warning: Duplicated aesthetics after name standardisation:
-</code></pre><pre><code class=language-r>dataman &lt;- data.frame( x= c(2008,2010), y=c(63000, 58850),
+dataman &lt;- data.frame( x= c(2008,2010), y=c(63000, 58850),
 		      scale = 1000 ,
 		      ratioxy = ratioxy,
 		      angleofspine =  -pi/2  ,
@@ -89,36 +88,6 @@ p &lt;-
 	     datalines, xjitteramount = 0.12)
 
 p 
-</code></pre><pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : span too small. fewer data values than degrees of freedom.
-</code></pre><pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : pseudoinverse used at 2007
-</code></pre><pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : neighborhood radius 2.02
-</code></pre><pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : reciprocal condition number 0
-</code></pre><pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : There are other near singularities as well. 4.0804
-</code></pre><pre><code>## Warning in predLoess(object$y, object$x, newx = if
-## (is.null(newdata)) object$x else if (is.data.frame(newdata))
-## as.matrix(model.frame(delete.response(terms(object)), : span too small.
-## fewer data values than degrees of freedom.
-</code></pre><pre><code>## Warning in predLoess(object$y, object$x, newx = if
-## (is.null(newdata)) object$x else if (is.data.frame(newdata))
-## as.matrix(model.frame(delete.response(terms(object)), : pseudoinverse used
-## at 2007
-</code></pre><pre><code>## Warning in predLoess(object$y, object$x, newx = if
-## (is.null(newdata)) object$x else if (is.data.frame(newdata))
-## as.matrix(model.frame(delete.response(terms(object)), : neighborhood radius
-## 2.02
-</code></pre><pre><code>## Warning in predLoess(object$y, object$x, newx = if
-## (is.null(newdata)) object$x else if (is.data.frame(newdata))
-## as.matrix(model.frame(delete.response(terms(object)), : reciprocal
-## condition number 0
-</code></pre><pre><code>## Warning in predLoess(object$y, object$x, newx = if
-## (is.null(newdata)) object$x else if (is.data.frame(newdata))
-## as.matrix(model.frame(delete.response(terms(object)), : There are other
-## near singularities as well. 4.0804
 </code></pre><figure><a href=/r-hugo-papercss-template/post/examples/xkcd-plot/figure/unnamed-chunk-5-1.png><img src=/r-hugo-papercss-template/post/examples/xkcd-plot/figure/unnamed-chunk-5-1.png alt></a><figcaption><p>plot with men and text</p></figcaption></figure><h3 id=bar-plot>bar plot</h3><pre><code class=language-r>data &lt;- volunteers
 data$xmin &lt;- data$year - 0.1
 data$xmax &lt;- data$year + 0.1
