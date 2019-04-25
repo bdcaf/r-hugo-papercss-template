@@ -1,5 +1,5 @@
 ---
-# vim: set ft=rnoweb : 
+# vim: set ft=rmd : 
 title: "{{ humanize .Name  | title }}"
 date: {{ .Date }}
 weight: 1
