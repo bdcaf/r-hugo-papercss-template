@@ -5,8 +5,9 @@ date: 2019-04-26T09:13:22+02:00
 weight: 1
 tags:
   - r
+  - devel
+  - render
 link-citations: yes
-draft: f
 ---
 
 In [knitr/R/hooks-md.R](https://github.com/yihui/knitr/blob/master/R/hooks-md.R) there is a custom function `render_jekyll`.  
