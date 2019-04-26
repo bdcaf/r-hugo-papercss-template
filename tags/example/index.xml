@@ -15,4 +15,4 @@ To compile me, run this in R:
 library(knitr) knit(&#39;001-minimal.Rmd&#39;) See output here.
 code chunks A paragraph here. A code chunk below (remember the three backticks):
 1+1 ## [1] 2 .4-.7+.3 # what? it is not zero! ## [1] 5.551115e-17 graphics It is easy.
-plot(1:10) plot of chunk unnamed-chunk-2</description></item></channel></rss>
+plot(1:10) plot of chunk unnamed-chunk-2 hist(rnorm(1000)) plot of chunk unnamed-chunk-2 inline code Yes I know the value of pi is 3.</description></item></channel></rss>

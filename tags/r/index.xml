@@ -12,7 +12,7 @@ plot(cars)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;
 &lt;figure class = &#34;float-right&#34; &gt;
-&lt;img src=&#34;https://bdcaf.github.io/r-hugo-papercss-template/r-hugo-papercss-template/post/devel/render/figure/unnamed-chunk-2-1.png&#34; alt=&#34;&#34;/&gt;&lt;figcaption&gt;&lt;p&gt;float-right fig.cssClass&lt;/p&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;img src=&#34;https://bdcaf.github.io/r-hugo-papercss-template/r-hugo-papercss-template/post/devel/render/figure/unnamed-chunk-2-1.png&#34; alt=&#34;&#34;/&gt;&lt;figcaption&gt;float-right fig.cssClass&lt;/figcaption&gt;&lt;/figure&gt;
 Figure one is supposed come right of this.&lt;/p&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</description></item><item><title>Xkcd Plot</title><link>https://bdcaf.github.io/r-hugo-papercss-template/post/examples/xkcd-plot/</link><pubDate>Tue, 23 Apr 2019 18:15:38 +0200</pubDate><guid>https://bdcaf.github.io/r-hugo-papercss-template/post/examples/xkcd-plot/</guid><description>&lt;p&gt;Now let&amp;rsquo;s include the &lt;a href=&#34;http://xkcd.r-forge.r-project.org&#34;&gt;xkcd package&lt;/a&gt;.
 In particular I follow the &lt;a href=&#34;https://cran.r-project.org/web/packages/xkcd/vignettes/xkcd-intro.pdf&#34;&gt;xkcd-intro&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>
