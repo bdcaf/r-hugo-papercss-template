@@ -16,13 +16,14 @@ all_rmd: $(RMD_TARGET)
 test:
 	echo $(RMD_TARGET)
 
-$(RBUNDLE_DIR)/%/index.md: $(RBUNDLE_DIR)/%/intermediate.wip
-	perl -pe 's/^!\[([^#]*)#?(.*)\]\((.*)\)/{{< bundle-figure name="\3" class="\2"  caption="\1" >}}/g' $< > $@
-	#cp $< $@
+#$(RBUNDLE_DIR)/%/index.md: $(RBUNDLE_DIR)/%/intermediate.wip
+	#perl -pe 's/^!\[([^#]*)#?(.*)\]\((.*)\)/{{< bundle-figure name="\3" class="\2"  caption="\1" >}}/g' $< > $@
+	##cp $< $@
 
-$(RBUNDLE_DIR)/%/intermediate.wip: $(RBUNDLE_DIR)/%/source.md
-	 cd $(@D); \
-	 $R  -e "knitr::knit('$(<F)', output='$(@F)')"
+$(RBUNDLE_DIR)/%/index.md: $(RBUNDLE_DIR)/%/source.md
+	 $R  -e "source('R/render.R')" \
+		 -e "setwd('$(@D)')" \
+		 -e "knitr::knit('$(<F)', output='$(@F)')"
 
 publish: page
 	cd $(PAGE_DIR) ;\
