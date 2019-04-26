@@ -1,5 +1,6 @@
 <h1>Guides</h1>
 {{ range where .Pages.ByWeight "Section" "guide" }}
+<article>
   <h2 class="post-list {{ if ne .Params.summary false }}summary{{ end }}">
     <a href="{{ .Permalink }}">
       {{ .Title }}
@@ -12,7 +13,8 @@
   </p>
   {{- else -}}
   {{ if ne .Params.summary false }}
-    {{ .Summary }}
+  {{ .Summary }}
   {{ end }}
   {{- end -}}
+</article>
 {{ end }}
