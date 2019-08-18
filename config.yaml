@@ -21,9 +21,20 @@ params:
   dateFormat: Jan 2, 2006
 
 mediaTypes:
-  text/plain:
+  "text/plain":
     suffixes:
-      -rmd
+      - md
+      - rmd
+
+#outputs:
+  #page:
+    #- html
+    #- md
+
+#outputFormats:
+  #md:
+    #mediaType: "text/plain"
+    #isPlainText: true
 
 ignoreFiles:
   - "source.md$"

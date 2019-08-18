@@ -3,7 +3,6 @@
 title: Xkcd Plot
 subtitle: following the xkcd vignette
 date: 2019-04-23T18:15:38+02:00
-weight: 1
 tags:
   - r
   - xkcd

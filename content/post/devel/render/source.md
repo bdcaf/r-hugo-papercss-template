@@ -2,7 +2,6 @@
 # vim: set ft=rmd : 
 title: "use custom render"
 date: 2019-04-26T09:13:22+02:00
-weight: 1
 tags:
   - r
   - devel

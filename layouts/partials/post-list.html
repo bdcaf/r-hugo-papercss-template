@@ -1,4 +1,4 @@
-{{ range where .Pages.ByWeight "Section" "guide" }}
+{{ range where .Pages "Section" "post" }}
   <h1 class="post-list {{ if ne .Params.summary false }}summary{{ end }}">
     <a href="{{ .Permalink }}">
       {{ .Title }}

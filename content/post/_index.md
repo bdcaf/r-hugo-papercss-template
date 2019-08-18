@@ -4,3 +4,4 @@ title = "Posts"
 author = "Hugo Authors"
 +++
 
+Some exemplary posts here.
