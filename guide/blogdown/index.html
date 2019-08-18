@@ -1,0 +1,21 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=generator content="Hugo 0.57.0"><link rel=canonical href=https://bdcaf.github.io/r-hugo-papercss-template/guide/blogdown/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#000000><meta name=msapplication-TileColor content=#ffffff><meta name=theme-color content=#ffffff><link rel=stylesheet href=https://bdcaf.github.io/r-hugo-papercss-template/style.min.cc8a4c6a74ddb78274e68eca1ae1e202a3c41f81f00724cc10c5e555e0eae5675be512fde3fac47996fe0ca7c27e93a1260c4837657c518b6fbff624befbe9d6.css integrity="sha512-zIpManTdt4J05o7KGuHiAqPEH4HwByTMEMXlVeDq5Wdb5RL94/rEeZb&#43;DKfCfpOhJgxIN2V8UYtvv/Ykvvvp1g=="><title>Creating Posts with Blogdown | R Hugo Papercss site template</title></head><body><div class="container paper"><nav class="border split-nav"><div class=nav-brand><h3><a href=https://bdcaf.github.io/r-hugo-papercss-template//>R Hugo Papercss site template</a></h3></div><div class=collapsible><input id=collapsible1 type=checkbox name=collapsible1>
+<button>
+<label for=collapsible1><div class=bar1></div><div class=bar2></div><div class=bar3></div></label></button><div class=collapsible-body><ul class=inline><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/guide/>Guides</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/post/>Blog</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/tags/>Tags</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/about/>About</a></li><li><a href=https://bdcaf.github.io/r-hugo-papercss-template/index.xml>RSS</a></li></ul></div></div></nav><main><h1 class=post-title>Creating Posts with Blogdown</h1><strong>Publish date: </strong>Aug 18, 2019<br><strong>Tags:</strong>
+<a href=https://bdcaf.github.io/r-hugo-papercss-template/tags/blogdown>blogdown</a><p>I found some interesting note about <code>blogdown</code> being able to use page bundles in this <a href=https://alison.rbind.io/post/2019-02-21-hugo-page-bundles/>post</a>.</p><h2 id=guide>guide</h2><h3 id=set-options>set options</h3><p>I started setting the options as suggested.</p><pre><code># in .Rprofile of the website project
+if (file.exists(&quot;~/.Rprofile&quot;)) {
+  base::sys.source(&quot;~/.Rprofile&quot;, envir = environment())
+}
+
+options(
+  blogdown.author = &quot;Clemens Ager&quot;,
+  blogdown.ext = &quot;.Rmd&quot;,
+  blogdown.subdir = &quot;post&quot;,
+  blogdown.new_bundle = TRUE,
+  blogdown.title_case = TRUE
+)
+
+source(&quot;R/render.R&quot;)
+source(&quot;R/build_dir.R&quot;)
+</code></pre><p>The <code>.Rprofile</code> is supposed to be in the folder where the <code>config.yaml</code> is located.
+I also added the <code>library</code> as it will not interfere with anything here.</p><p>Then you can start <code>R</code> in the top directory of the blog (again where <code>config.yaml</code> is located).</p><h3 id=make-a-post>Make a post</h3><p><code>new_post(&quot;test_post&quot;)</code> will create an empty folder with an <code>index.Rmd</code>.<br>Inside I can write as usual. I decided to do some trivial R stuff.</p><p>However the building is different. I decided only the <code>index.Rmd</code> requires building.
+The command <code>build_bundles()</code> inside R does this. But I&rsquo;m thinking about changing this around, as I also like the idea to have <code>Makefile</code> bundles. Either way, should you also use normal blogdown posts you may need to make sure it doesn&rsquo;t rebuild these bundles.</p><p>The rendered post is <a href=https://bdcaf.github.io/r-hugo-papercss-template/post/2019-08-18-test-blogdown/>here</a>.</p></main></div></body></html>

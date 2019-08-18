@@ -1,0 +1,22 @@
+---
+title: Test Blogdown
+author: Clemens Ager
+date: '2019-08-18'
+slug: []
+categories: []
+tags: []
+---
+
+Let's do a little R with the cars dataset.  
+
+```{r}
+summary(cars)
+```
+
+```{r, fig.cap="a cars plot"}
+with(cars, plot(speed, dist))
+```
+
+
+The source is {{< bundle-file name="index.Rmd" caption="here" >}}.
+
