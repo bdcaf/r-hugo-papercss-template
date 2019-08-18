@@ -7,7 +7,7 @@ categories: []
 tags: []
 ---
 
-Let's do a little R with the cars dataset.
+Let's do a little R with the cars dataset.  
 
 ```{r}
 summary(cars)
@@ -17,4 +17,6 @@ summary(cars)
 with(cars, plot(speed, dist))
 ```
 
+
+The source is {{< bundle-file name="index.Rmd" caption="here" >}}.
 

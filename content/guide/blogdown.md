@@ -26,20 +26,25 @@ options(
   blogdown.author = "Clemens Ager",
   blogdown.ext = ".Rmd",
   blogdown.subdir = "post",
-  blogdown.yaml.empty = TRUE,
   blogdown.new_bundle = TRUE,
   blogdown.title_case = TRUE
 )
 
-library(blogdown)
+source("R/render.R")
+source("R/build_dir.R")
 ```
 
 The `.Rprofile` is supposed to be in the folder where the `config.yaml` is located.
 I also added the `library` as it will not interfere with anything here.
 
+Then you can start `R` in the top directory of the blog (again where `config.yaml` is located).
 
 ### Make a post
 
 `new_post("test_post")`  will create an empty folder with an `index.Rmd`.  
-This is good so far.
+Inside I can write as usual.  I decided to do some trivial R stuff.
 
+However the building is different.  I decided only the `index.Rmd` requires building.
+The command `build_bundles()` inside R does this.  But I'm thinking about changing this around, as I also like the idea to have `Makefile` bundles.  Either way, should you also use normal blogdown posts you may need to make sure it doesn't rebuild these bundles.
+
+The rendered post is [here]({{< ref "/post/2019-08-18-test-blogdown/index.md" >}}).
